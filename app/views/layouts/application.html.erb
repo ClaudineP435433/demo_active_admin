@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/google_analytics" %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <%= yield(:robots) %>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'bootstrap'%>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <body>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "yourdomain",
+        "url": "https://www.yourdomain.com/",
+        "logo": "",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "url": "https://www.yourdomain.com",
+          "email": "contact@yourdomain.com",
+          "telephone": "+33-30000000",
+          "contactType": "customer service"
+        }],
+        "image": "",
+        "description": ""
+      }
+    </script>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+</html>
