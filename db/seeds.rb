@@ -28,3 +28,4 @@ sample["series"].each do |tv_show|
   TvShow.create! tv_show
 end
 puts 'Finished!'
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -1,23 +1,3 @@
-# How to install Active Admin on a Rails Project ?
-
-## 1. Config
-
-### Documentation
-Docs : https://activeadmin.info/documentation.html
-
-### Project Config
-
-```
-# Gemfile
-gem 'activeadmin'
-```
-puis
-```
-rails generate active_admin:install
-```
-puis
-```
-# active_admin.rb
 def authenticate_admin!
   redirect_to new_user_session_path unless current_user && current_user.admin
 end
@@ -35,7 +15,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = PROJECT_NAME
+  config.site_title = 'demo'
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -151,7 +131,7 @@ ActiveAdmin.setup do |config|
   # This allows your users to comment on any resource registered with Active Admin.
   #
   # You can completely disable comments:
-  # config.comments = false
+  config.comments = false
   #
   # You can change the name under which comments are registered:
   # config.comments_registration_name = 'AdminComment'
@@ -323,26 +303,3 @@ ActiveAdmin.setup do |config|
   #
   # config.order_clause = MyOrderClause
 end
-```
-
-### Les petits plus
-```
-# gem to have more features - config in github
-gem 'activeadmin_addons'
-```
-
-```
-# gem pour le rendre responsive
-https://github.com/formaweb/formadmin
-```
-
-## 2. Create all your models in Active Admin
-```
-rails generate active_admin:resource [MyModelName]
-```
-
-## 3. Details all what you want for each model
-
-See the app/admin folder
-
-
