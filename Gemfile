@@ -20,6 +20,9 @@
   gem 'slim'
   gem 'activeadmin'
 
+  gem 'cloudinary', require: false
+  gem 'activestorage-cloudinary-service'
+
   group :development do
     gem 'rails-erd'
     gem 'web-console', '>= 3.3.0'
