@@ -1,0 +1,8 @@
+<%= simple_form_for @movie do |f| %>
+  <%= f.input :title %>
+  <%= f.input :year %>
+  <%= f.input :syllabus %>
+  <%= f.input :director_id, collection: Director.all %>
+  <%= f.file_field :images, multiple: true %>
+  <%= f.button :submit %>
+<% end %>

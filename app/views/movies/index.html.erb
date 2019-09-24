@@ -6,6 +6,9 @@
         <% @movies.each do |movie| %>
           <h4><%= movie.title %></h4>
           <p><%= movie.syllabus %></p>
+          <% movie.images.each do |image| %>
+            <%= image_tag url_for(image), height: 300 %>
+          <% end %>
         <% end %>
       </div>
     </div>
