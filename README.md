@@ -345,4 +345,16 @@ rails generate active_admin:resource [MyModelName]
 
 See the app/admin folder
 
+# How to install Active Storage on a Rails Project ?
 
+## link of active storage PR.
+https://github.com/ClaudineP435433/demo_active_admin/pull/1/files
+
+## Active storage standard
+https://edgeguides.rubyonrails.org/active_storage_overview.html
+
+## Gem to add Cloudinary in Active storage
+https://github.com/0sc/activestorage-cloudinary-service
+
+## Cool blog
+https://evilmartians.com/chronicles/rails-5-2-active-storage-and-beyond
